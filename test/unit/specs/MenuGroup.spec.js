@@ -33,26 +33,23 @@ describe('MenuGroup', function () {
   })
 
   it('不同状态的 wrapClassNames', () => {
-    expect(menuGroup1.wrapClassNames).toEqual('menu-group menu-group-shrink')
+    expect(menuGroup1.wrapClassNames).toEqual('vn-menu-group vn-menu-group-shrink')
 
     menuGroup1.isExpand = true
-    expect(menuGroup1.wrapClassNames).toEqual('menu-group menu-group-expand')
+    expect(menuGroup1.wrapClassNames).toEqual('vn-menu-group vn-menu-group-expand')
 
     menuGroup1.disabled = true
-    expect(menuGroup1.wrapClassNames).toEqual('menu-group menu-group-expand menu-group-disabled')
+    expect(menuGroup1.wrapClassNames).toEqual('vn-menu-group vn-menu-group-expand vn-menu-group-disabled')
 
     menuGroup1.isExpand = false
-    expect(menuGroup1.wrapClassNames).toEqual('menu-group menu-group-shrink menu-group-disabled')
+    expect(menuGroup1.wrapClassNames).toEqual('vn-menu-group vn-menu-group-shrink vn-menu-group-disabled')
 
     menuGroup1.class = 'my-class'
-    expect(menuGroup1.wrapClassNames).toEqual('menu-group menu-group-shrink menu-group-disabled my-class')
+    expect(menuGroup1.wrapClassNames).toEqual('vn-menu-group vn-menu-group-shrink vn-menu-group-disabled my-class')
   })
 
   it('不同层级 titleStyle', () => {
-    expect(menuGroup1.titleStyle).toEqual({ 'paddingLeft': '0px' })
-
-    menuGroup1.level = 1
-    expect(menuGroup1.titleStyle).toEqual({ 'paddingLeft': '24px' })
+    expect(menuGroup1.titleStyle).toEqual({ 'paddingLeft': '20px' })
 
     menuGroup1.level = 0
     expect(menuGroup1.titleStyle).toEqual({ 'paddingLeft': '0px' })

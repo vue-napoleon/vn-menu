@@ -17,22 +17,22 @@ describe('MenuItem', function () {
   })
 
   it('测试不同状态的 classNames', function () {
-    expect(menuItem.classNames).toEqual('menu-item')
+    expect(menuItem.classNames).toEqual('vn-menu-item')
 
     menuItem.active = true
-    expect(menuItem.classNames).toEqual('menu-item menu-item-active')
+    expect(menuItem.classNames).toEqual('vn-menu-item vn-menu-item-active')
 
     menuItem.disabled = true
-    expect(menuItem.classNames).toEqual('menu-item menu-item-disabled')
+    expect(menuItem.classNames).toEqual('vn-menu-item vn-menu-item-disabled')
 
     menuItem.selected = true
-    expect(menuItem.classNames).toEqual('menu-item menu-item-selected menu-item-disabled')
+    expect(menuItem.classNames).toEqual('vn-menu-item vn-menu-item-selected vn-menu-item-disabled')
 
     menuItem.disabled = false
-    expect(menuItem.classNames).toEqual('menu-item menu-item-active menu-item-selected')
+    expect(menuItem.classNames).toEqual('vn-menu-item vn-menu-item-active vn-menu-item-selected')
 
     menuItem.class = 'my-class'
-    expect(menuItem.classNames).toEqual('menu-item menu-item-active menu-item-selected my-class')
+    expect(menuItem.classNames).toEqual('vn-menu-item vn-menu-item-active vn-menu-item-selected my-class')
   })
 
   it('单击触发单击事件', () => {
@@ -66,10 +66,7 @@ describe('MenuItem', function () {
   })
 
   it('不同层级 titleStyle', () => {
-    expect(menuItem.style).toEqual({ 'paddingLeft': '0px' })
-
-    menuItem.level = 1
-    expect(menuItem.style).toEqual({ 'paddingLeft': '24px' })
+    expect(menuItem.style).toEqual({ 'paddingLeft': '20px' })
 
     menuItem.level = 0
     expect(menuItem.style).toEqual({ 'paddingLeft': '0px' })

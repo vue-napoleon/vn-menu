@@ -1,9 +1,11 @@
 <template>
-  <li :class="wrapClassNames" :onClick="handleClick">
-    <div class="${this.prefixCls}-title" :style="titleStyle">
+  <li :class="wrapClassNames" @click="handleClick">
+    <div :class="prefixCls + '-title'" :style="titleStyle">
       {{ title }}
     </div>
-    <slot></slot>
+    <ul v-show="isExpand">
+      <slot></slot>
+    </ul>
   </li>
 </template>
 
@@ -13,11 +15,15 @@ export default {
   props: {
     prefixCls: {
       type: String,
-      default: 'menu-group'
+      default: 'vn-menu-group'
     },
     title: {
       type: [String, Object],
       default: ''
+    },
+    slideIndent: {
+      type: Number,
+      default: 20
     },
     key: {
       type: String,
@@ -25,7 +31,7 @@ export default {
     },
     level: {
       type: Number,
-      default: 0
+      default: 1
     },
     isExpand: {
       type: Boolean,
@@ -39,6 +45,12 @@ export default {
       type: String
     }
   },
+  compiled () {
+    this.$children.forEach(item => {
+      item.level = this.level + 1
+      item.slideIndent = this.slideIndent
+    })
+  },
   methods: {
     handleClick (e) {
       if (this.disabled === false) {
@@ -46,7 +58,7 @@ export default {
           item: this,
           domEvent: e
         }
-        this.$emit('muen-group-click', info)
+        this.$dispatch('muen-group-click', info)
       }
     }
   },
@@ -61,12 +73,9 @@ export default {
         [`${this.class}`]: !!this.class
       })
     },
-    titleClassNames () {
-      return this.prefixCls + '-title'
-    },
     titleStyle () {
       return {
-        paddingLeft: this.level * 24 + 'px'
+        paddingLeft: this.level * this.slideIndent + 'px'
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <li :title="title" :class="classNames" :onClick="handleClick" :style="style">
+  <li :title="title" :class="classNames" @click="handleClick" :style="style">
     <slot></slot>
   </li>
 </template>
@@ -10,11 +10,15 @@ export default {
   props: {
     prefixCls: {
       type: String,
-      default: 'menu-item'
+      default: 'vn-menu-item'
     },
     title: {
       type: [String, Object],
       default: ''
+    },
+    slideIndent: {
+      type: Number,
+      default: 20
     },
     key: {
       type: String,
@@ -34,7 +38,7 @@ export default {
     },
     level: {
       type: Number,
-      default: 0
+      default: 1
     },
     class: {
       type: String
@@ -47,9 +51,9 @@ export default {
           item: this,
           domEvent: e
         }
-        this.$emit('muen-item-click', info)
+        this.$dispatch('muen-item-click', info)
         if (!this.selected) {
-          this.$emit('muen-item-selected', info)
+          this.$dispatch('muen-item-selected', info)
         }
       }
     }
@@ -66,7 +70,7 @@ export default {
     },
     style () {
       return {
-        paddingLeft: this.level * 24 + 'px'
+        paddingLeft: this.level * this.slideIndent + 'px'
       }
     }
   }
