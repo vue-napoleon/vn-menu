@@ -1,8 +1,9 @@
 {
   "name": "vn-menu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个菜单组件",
   "author": "limingmin <314407103@qq.com>",
+  "main": "./lib/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -14,7 +15,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "ant-theme": "^1.0.0",
+    "ant-theme": "^1.0.1",
     "babel-runtime": "^6.0.0",
     "classnames": "^2.2.5",
     "guid": "0.0.12",
