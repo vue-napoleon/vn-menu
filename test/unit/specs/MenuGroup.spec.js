@@ -29,7 +29,7 @@ describe('MenuGroup', function () {
   })
 
   afterEach(function () {
-    document.body.removeChild(mv.$el)
+    mv.$destroy(true)
   })
 
   it('不同状态的 wrapClassNames', () => {
@@ -77,5 +77,12 @@ describe('MenuGroup', function () {
     menuGroup2.handleClick()
     expect(menuGroup1.isExpand).toBeTruthy()
     expect(menuGroup2.isExpand).toBeTruthy()
+  })
+
+  it('自动生成 key', () => {
+    expect(menuGroup1.key).not.toEqual('')
+
+    // key 不相等
+    expect(menuGroup1.key).not.toEqual(menuGroup2.key)
   })
 })

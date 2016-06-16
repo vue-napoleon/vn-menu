@@ -11,6 +11,7 @@
 
 <script>
 import cn from 'classnames'
+import Guid from 'guid'
 export default {
   props: {
     prefixCls: {
@@ -27,7 +28,9 @@ export default {
     },
     key: {
       type: String,
-      default: ''
+      default: function () {
+        return Guid.raw()
+      }
     },
     level: {
       type: Number,

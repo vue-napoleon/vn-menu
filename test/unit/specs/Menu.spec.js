@@ -21,7 +21,7 @@ describe('Menu', function () {
   })
 
   afterEach(function () {
-    document.body.removeChild(mv.$el)
+    mv.$destroy(true)
   })
 
   it('初始状态', () => {

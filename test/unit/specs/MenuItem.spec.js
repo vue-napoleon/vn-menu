@@ -13,7 +13,7 @@ describe('MenuItem', function () {
   })
 
   afterEach(function () {
-    document.body.removeChild(menuItem.$el)
+    menuItem.$destroy(true)
   })
 
   it('测试不同状态的 classNames', function () {
@@ -70,5 +70,21 @@ describe('MenuItem', function () {
 
     menuItem.level = 0
     expect(menuItem.style).toEqual({ 'paddingLeft': '0px' })
+  })
+
+  it('自动生成 key', () => {
+    expect(menuItem.key).not.toEqual('')
+
+    // 创建一个新的菜单项
+    var el1 = document.createElement('div')
+    document.body.appendChild(el1)
+    MenuItem.el = function () {
+      return el1
+    }
+    var menuItem1 = new Vue(MenuItem)
+    // key 不相等
+    expect(menuItem.key).not.toEqual(menuItem1.key)
+
+    menuItem1.$destroy(true)
   })
 })
