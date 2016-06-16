@@ -1,7 +1,7 @@
 import Menu from 'src/Menu.vue'
 import MenuItem from 'src/MenuItem.vue'
 import MenuGroup from 'src/MenuGroup.vue'
-import Vue from 'Vue'
+import Vue from 'vue'
 
 describe('MenuGroup', function () {
   let mv, menu, menuGroup1, menuGroup2, el

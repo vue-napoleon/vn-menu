@@ -1,5 +1,5 @@
 import MenuItem from 'src/MenuItem.vue'
-import Vue from 'Vue'
+import Vue from 'vue'
 
 describe('MenuItem', function () {
   let menuItem, el
