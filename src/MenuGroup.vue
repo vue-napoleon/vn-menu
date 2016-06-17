@@ -11,7 +11,7 @@
 
 <script>
 import cn from 'classnames'
-import Guid from 'guid'
+import uuid from 'node-uuid'
 export default {
   props: {
     prefixCls: {
@@ -29,7 +29,7 @@ export default {
     key: {
       type: String,
       default: function () {
-        return Guid.raw()
+        return uuid.v1()
       }
     },
     level: {

@@ -16,7 +16,7 @@
     "ant-theme": "^1.0.1",
     "babel-runtime": "^6.0.0",
     "classnames": "^2.2.5",
-    "guid": "0.0.12",
+    "node-uuid": "^1.4.7",
     "vue": "^1.0.21"
   },
   "devDependencies": {
