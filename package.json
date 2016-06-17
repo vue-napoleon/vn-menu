@@ -1,6 +1,6 @@
 {
   "name": "vn-menu",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "一个菜单组件",
   "author": "limingmin <314407103@qq.com>",
   "main": "./src/index.vue",
