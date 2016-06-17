@@ -11,12 +11,19 @@
       <vn-menu-item>选项4</vn-menu-item>
       <vn-menu-item>选项5</vn-menu-item>
     </vn-menu-group>
+    <vn-menu-group title="嵌套分组">
+      <vn-menu-item>嵌套分组1</vn-menu-item>
+      <vn-menu-group title="子分组">
+        <vn-menu-item>子分组1</vn-menu-item>
+        <vn-menu-item>子分组2</vn-menu-item>
+      </vn-menu-group>
+    </vn-menu-group>
   </vn-menu>
 
 </template>
 
 <script>
-import {vnMenu, vnMenuGroup, vnMenuItem} from 'src/index'
+import {vnMenu, vnMenuGroup, vnMenuItem} from 'src/index.vue'
 export default {
   components: {
     vnMenu,
@@ -26,6 +33,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style lang="less" src="ant-theme/index.less"></style>

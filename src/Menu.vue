@@ -100,5 +100,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less" src="ant-theme/index.less"></style>

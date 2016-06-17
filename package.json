@@ -1,14 +1,12 @@
 {
   "name": "vn-menu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一个菜单组件",
   "author": "limingmin <314407103@qq.com>",
-  "main": "./lib/index.js",
+  "main": "./src/index.vue",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "prepublish": "npm run build",
-    "example": "node build/example.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit",
